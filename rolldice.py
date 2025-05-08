@@ -19,3 +19,18 @@
 # How many sides? 20
 # Here are the results: [18, 19, 6, 8, 13, 6, 6, 6, 18, 12, 20, 10, 14, 8, 14, 17, 12, 15, 20, 17]
 
+def RollDice(totdice, dicesides):
+    import random
+    return [random.randint(1, dicesides)
+    for _ in range(totdice)]
+
+try:
+    totdice = int(input("How many dice are you using?"))
+    dicesides = int(input("How many sides does the dice have?"))
+    if totdice <= 0 or dicesides <= 1:
+        print("Sides must be greater than 1 and dice count greater than 0!")
+    else:
+        roller = RollDice(totdice, dicesides)
+        print(f"Here are the results {roller}")
+except:
+    print("Sides must be greater than 1 and dice count greater than 0!")
